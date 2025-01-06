@@ -1,0 +1,659 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Portofolio Website
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+   body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hamburger-menu {
+            display: none;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900">
+  <!-- Navigation -->
+  <nav class="bg-white fixed w-full z-10 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Brand -->
+      <div class="text-3xl font-extrabold text-gray-800">
+        AntepRohman.
+      </div>
+  
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu text-3xl cursor-pointer text-gray-800 md:hidden">
+        <i class="fas fa-bars"></i>
+      </div>
+  
+      <!-- Navigation Links (Desktop) -->
+      <ul class="nav-links hidden md:flex space-x-6 text-lg font-semibold text-gray-700">
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#beranda">Beranda</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#tentang_saya">Tentang Saya</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#portofolio">Portofolio</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden bg-gray-100 p-4 shadow-md">
+      <ul class="flex flex-col space-y-4 text-lg font-semibold text-gray-700">
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#beranda">Beranda</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#tentang_saya">Tentang Saya</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#portofolio">Portofolio</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  <!-- Home Section -->
+   
+  <section class="h-screen bg-white relative flex items-center" id="beranda">
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start">
+      <!-- Kolom Kiri: Teks -->
+      <div class="w-full lg:w-1/2 lg:pr-8">
+        <h1 class="text-6xl font-bold">Halo, saya</h1>
+        <h2 id="dynamic-text" class="text-6xl font-bold text-blue-500"></h2>
+        <p class="max-w-xl my-6">
+            <b>Saya seorang mahasiswa Teknik Informatika di Universitas Sains Al-Qur'an</b> sekaligus <i>desainer grafis</i> dengan fokus pada pembuatan desain untuk <b>clothing brand</b>. Dengan <i>pengalaman lebih dari 3 tahun</i>, saya telah berkolaborasi dengan berbagai <b>brand clothing</b>, baik dari dalam negeri maupun luar negeri, untuk menghasilkan desain yang <i>kreatif, unik</i>, dan sesuai dengan <b>tren pasar</b>.
+        </p>
+        <div class="flex space-x-4 mb-6">
+          <a class="bg-transparent border border-blue-500 text-blue-500 px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white flex items-center space-x-2" href="#kontak">
+            <span>HUBUNGI SAYA</span>
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Foto dengan Outline Abstrak Ganda -->
+<div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+  <div class="relative abstract-mask">
+    <!-- Foto -->
+    <img
+      alt="Portrait of Antep Rohman Nur Fauzi"
+      class="photo"
+      src="./images/WhatsApp Image 2025-01-05 at 10.48.20 AM.jpeg"
+    />
+    <!-- Outline Abstrak Putih -->
+    <div class="outline-mask outline-white absolute inset-0"></div>
+    <!-- Outline Abstrak Berwarna -->
+    <div class="outline-mask outline-color absolute inset-0"></div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  /* Container Foto Abstrak */
+  .abstract-mask {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(
+      20% 0%, 80% 10%, 100% 40%, 90% 80%, 70% 100%, 30% 90%, 0% 60%, 10% 20%
+    );
+    animation: float-move 10s ease-in-out infinite;
+  }
+
+  /* Foto dengan Ukuran Tetap */
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Membuat foto tetap proporsional tanpa stretch */
+    border-radius: 20px;
+  }
+
+  /* Outline Abstrak */
+  .outline-mask {
+    clip-path: polygon(
+      20% 0%, 80% 10%, 100% 40%, 90% 80%, 70% 100%, 30% 90%, 0% 60%, 10% 20%
+    );
+    border-radius: 20px;
+  }
+
+  /* Outline Putih (Transparan) */
+  .outline-white {
+    border: 10px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+
+  /* Outline Berwarna */
+  .outline-color {
+    border: 10px solid #3b82f6;
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  /* Animasi Melayang */
+  @keyframes float-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(15px, -10px);
+    }
+    50% {
+      transform: translate(-20px, 20px);
+    }
+    75% {
+      transform: translate(10px, -15px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+</style>
+
+  
+    <!-- Overlay Swipe Up -->
+    <div class="absolute bottom-0 left-0 w-full flex items-center justify-center bg-gradient-to-t from-slate-50 to-transparent text-slate-950 py-4">
+      <!-- Kotak dengan Animasi Bounce -->
+      <div class="flex items-center bg-blue-500 shadow-lg shadow-blue-500/50 rounded-lg px-4 py-2 animate-bounce space-x-2">
+        <!-- Teks Swipe Up -->
+        <p class="text-lg font-semibold text-white">Swipe Up</p>
+        <!-- Ikon Panah -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V6m-7 7l7-7 7 7" />
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Script Animasi -->
+  <script>
+    const textElement = document.getElementById("dynamic-text");
+    const texts = ["Antep Rohman Nur Fauzi", "Desainer Grafis"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentText = texts[textIndex];
+      textElement.innerHTML = currentText.slice(0, charIndex) + (isDeleting ? "|" : "");
+  
+      if (!isDeleting && charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(type, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, 1000);
+      }
+    }
+  
+    type();
+  </script>
+  
+  
+  
+  
+  
+  <!-- About Section -->
+  <!-- Tambahkan file CSS eksternal -->
+<!-- Tambahkan file CSS eksternal -->
+<style>
+    .iframe-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+    }
+  </style>
+  
+  <section class="py-16 bg-slate-50" id="tentang_saya">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Tentang Saya</h2>
+      <div class="flex flex-wrap lg:flex-nowrap space-y-8 lg:space-y-0 lg:space-x-8">
+        <div class="bg-white shadow-xl rounded-2xl p-10 max-w-xl w-full">
+          <h2 class="text-2xl font-semibold mb-8">Perkenalkan</h2>
+          <div class="flex flex-col md:flex-row">
+            
+            <!-- Bagian Skills -->
+            <div class="md:w-full">
+              <p class="mb-6 text-gray-700">
+                <b>Saya seorang mahasiswa Teknik Informatika di Universitas Sains Al-Qur'an</b> sekaligus <i>desainer grafis</i> dengan fokus pada pembuatan desain untuk <b>clothing brand</b>. Dengan <i>pengalaman lebih dari 3 tahun</i>, saya telah berkolaborasi dengan berbagai <b>brand clothing</b>, baik dari dalam negeri maupun luar negeri, untuk menghasilkan desain yang <i>kreatif, unik</i>, dan sesuai dengan <b>tren pasar</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <!-- Microsoft Tools -->
+          <div>
+              <h3 class="text-lg font-bold mb-2">Microsoft Tools</h3>
+              <div class="flex flex-wrap gap-2">
+                  <span class="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-indigo-600">Microsoft Word</span>
+                  <span class="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-indigo-600">Microsoft Excel</span>
+                  <span class="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-indigo-600">Microsoft Power Point</span>
+                  <span class="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-indigo-600">Microsoft Visio</span>
+              </div>
+        
+              <!-- Design & Creative Tools -->
+              <h2 class="text-lg font-bold mb-4 mt-6">Design & Creative Tools</h2>
+              <div class="flex flex-wrap gap-2">
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600">Adobe Photoshop</span>
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600">Figma</span>
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600">Canva</span>
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600">Infitiny Design</span>
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600">Infitiny Painter</span>
+              </div>
+        
+              <!-- Development Skills -->
+              <h2 class="text-lg font-bold mb-4 mt-6">Development Skills</h2>
+              <div class="flex flex-wrap gap-2">
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">HTML</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">CSS</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">JavaScript</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">Tailwind</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">Vue</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">React</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">Laravel</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">PHP</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">Java</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">C++</span>
+                  <span class="bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600">MySQL</span>
+              </div>
+          </div>
+        </div>
+        
+  </section>
+  
+  
+  
+  
+  <!-- Portofolio Section -->
+  <section class="py-16 bg-slate-50" id="portofolio">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Portofolio</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="portfolio-container">
+        <!-- Project 1 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 1" class="mb-4 rounded-lg" src="./images/prototipe.jpg" />
+          <h3 class="text-xl font-bold mb-2">E-Posyandu</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-violet-200 text-violet-500 px-3 py-1 rounded-full">
+             Figma
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.figma.com/proto/CEAMTTfE4zzBq5Up7ghStD/E-POSYANDU?page-id=0%3A1&node-id=67-8640&p=f&viewport=611%2C450%2C0.03&t=uQ6J44eopNBwXzWZ-1&scaling=scale-down&content-scaling=fixed" target="_blank" rel="noopener">Lihat Prototipe</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 2" class="mb-4 rounded-lg" src="./images/1.jpg" />
+          <h3 class="text-xl font-bold mb-2">State of Mind Graphic</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-blue-500 text-blue-50 px-3 py-1 rounded-full">
+             Photoshop
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/CyV73IeScyG/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Lihat Instagram</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 3" class="mb-4 rounded-lg" src="./images/2.jpg" />
+          <h3 class="text-xl font-bold mb-2">Masturbation Graphic</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-blue-500 text-blue-50 px-3 py-1 rounded-full">
+              Photoshop
+            </div>
+            <div class="bg-blue-200 text-blue-500 px-3 py-1 rounded-full">
+              Infinity Designer
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/CvuWkTHym0L/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Lihat Instagram</a>
+        </div>
+        <!-- Project 4 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 4" class="mb-4 rounded-lg" src="./images/3.jpg" />
+          <h3 class="text-xl font-bold mb-2">Overdose Graphic</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-blue-500 text-blue-50 px-3 py-1 rounded-full">
+              Photoshop
+            </div>
+            <div class="bg-blue-200 text-blue-500 px-3 py-1 rounded-full">
+              Infinity Designer
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/CvkJYJ_SE5L/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Lihat Instagram</a>
+        </div>
+        <!-- Project 5 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 5" class="mb-4 rounded-lg" src="./images/4.jpg" />
+          <h3 class="text-xl font-bold mb-2">Rob of rob Graphic</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-blue-500 text-blue-50 px-3 py-1 rounded-full">
+              Photoshop
+            </div>
+            <div class="bg-blue-200 text-blue-500 px-3 py-1 rounded-full">
+             Infinity Designer
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/CvfYf7GyTDP/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Lihat Instagram</a>
+        </div>
+        <!-- Project 6 -->
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+          <img alt="Project 6" class="mb-4 rounded-lg" src="./images/5.jpg" />
+          <h3 class="text-xl font-bold mb-2">Addict $*x Graphic</h3>
+          <p class="mb-4">
+            This graphic represents the complex and vibrant state of mind, using abstract shapes and a vivid color palette to convey emotions and thoughts.
+           </p>
+           <div class="flex space-x-2 mb-4">
+            <div class="bg-violet-200 text-violet-500 px-3 py-1 rounded-full">
+             Figma
+            </div>
+            <div class="bg-blue-200 text-blue-500 px-3 py-1 rounded-full">
+             Photoshop
+            </div>
+           </div>
+          <a class="text-blue-500 hover:underline" href="https://www.instagram.com/p/Cvr49gAStvo/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Lihat Instagram</a>
+        </div>
+      </div>
+  
+      <!-- Button to load more projects -->
+      <div class="text-center mt-8">
+        <button
+          id="load-more-btn"
+          class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600"
+        >
+          Lihat Lebih Banyak
+        </button>
+      </div>
+    </div>
+    
+  </section>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loadMoreBtn = document.getElementById("load-more-btn");
+      const portfolioContainer = document.getElementById("portfolio-container");
+  
+      // Array of additional projects
+      const additionalProjects = [
+        {
+          img: "./images/6.jpg",
+          title: "Stay Safe Graphic",
+          link: "https://www.instagram.com/p/CvmxRpnSgh6/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/7.jpg",
+          title: "Make Peace Graphic",
+          link: "https://www.instagram.com/p/Cuw4biFSXFl/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/8.jpg",
+          title: "Chaos Graphic",
+          link: "https://www.instagram.com/p/Cp1NGfBvuTN/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/9.jpg",
+          title: "Spiderman Graphic",
+          link: "https://www.instagram.com/p/Cp1OOAjvsiV/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/10.jpg",
+          title: "Astro Boy Graphic",
+          link: "https://www.instagram.com/p/CosWaFFSpVQ/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        
+        {
+          img: "./images/11.jpg",
+          title: "Demon Graphic",
+          link: "https://www.instagram.com/p/CoCuh5rp_zA/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/12.jpg",
+          title: "Falling For You Graphic",
+          link: "https://www.instagram.com/p/Cn005QyJWsw/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/13.jpg",
+          title: "Boy Dont Cry Graphic",
+          link: "https://www.instagram.com/p/CnmS667pYni/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        {
+          img: "./images/14.jpg",
+          title: "Lover-rated Graphic",
+          link: "https://www.instagram.com/p/CjxgpAgh_Q6/?utm_source=ig_web_copy_link",
+          linkText: "Lihat Instagram",
+        },
+        // Add more projects here as needed
+      ];
+  
+      let currentIndex = 0;
+  
+      loadMoreBtn.addEventListener("click", function () {
+        // Load 3 more projects at a time
+        const nextProjects = additionalProjects.slice(currentIndex, currentIndex + 6);
+  
+        nextProjects.forEach((project) => {
+          const projectCard = document.createElement("div");
+          projectCard.className = "bg-white p-4 rounded-2xl shadow-md";
+          projectCard.innerHTML = `
+            <img alt="${project.title}" class="mb-4 rounded-lg" src="${project.img}" />
+            <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+            <a class="text-blue-500 hover:underline" href="${project.link}" target="_blank" rel="noopener">
+              ${project.linkText}
+            </a>
+          `;
+          portfolioContainer.appendChild(projectCard);
+        });
+  
+        currentIndex += 6;
+  
+        // Hide the button if all projects are loaded
+        if (currentIndex >= additionalProjects.length) {
+          loadMoreBtn.style.display = "none";
+        }
+      });
+    });
+    
+  </script>
+  
+  <!-- Contact Section -->
+  <section class="py-16 bg-white" id="kontak">
+   <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">
+     Kontak Saya
+    </h2>
+    <form class="max-w-lg mx-auto mb-8">
+     <div class="mb-4">
+      <label class="block text-lg font-bold mb-2" for="nama">
+       Nama
+      </label>
+      <input class="w-full p-2 border border-gray-300 rounded-lg" id="nama" required="" type="text"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-lg font-bold mb-2" for="email">
+       Email      </label>
+      <input class="w-full p-2 border border-gray-300 rounded-lg" id="email" required="" type="email"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-lg font-bold mb-2" for="pesan">
+       Pesan
+      </label>
+      <textarea class="w-full p-2 border border-gray-300 rounded-lg" id="pesan" required="" rows="4">
+      </textarea>
+     </div>
+     <button class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600" type="submit">
+      Kirim Pesan
+     </button>
+     <form class="max-w-lg mx-auto mb-8" action="kirim-pesan.php" method="POST">
+     </form>
+    </form>
+    <div class="text-center">
+     <p class="text-lg mb-4">
+        Atau hubungi saya langsung di:
+     </p>
+     <p class="text-lg mb-4">
+      Email: supplycoabnormal@gmail.com
+     </p>
+     
+   <script>
+    document.querySelector("form").addEventListener("submit", function (event) {
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+
+        if (!nama || !email || !pesan) {
+            event.preventDefault();
+            alert("Semua field harus diisi!");
+        }
+    });
+</script>
+
+   
+  </section>
+  <script>
+   document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+  </script>
+  <head>
+  
+    <title>Footer Design</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      footer {
+        text-align: center;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        padding: 20px;
+        background-color: #0f172a;
+        color: #94a3b8;
+      }
+  
+      .footer-links {
+        margin-bottom: 15px;
+      }
+  
+      .footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+  
+      .footer-links a:hover {
+        color: #60a5fa;
+        text-decoration: underline;
+      }
+  
+      .social-icons {
+        margin-bottom: 15px;
+      }
+  
+      .social-icons a {
+        margin: 0 10px;
+        font-size: 24px;
+        color: #475569;
+        text-decoration: none;
+      }
+  
+      .social-icons a:hover {
+        color: #60a5fa;
+      }
+  
+      .footer-copyright {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="footer-links">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang_saya">Tentang Saya</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="social-icons">
+        <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://github.com/AntepRohman" aria-label="Kunjungi github" target="_blank" rel="noopener">
+          <i class="fab fa-github">
+          </i>
+         </a>
+         <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://t.me/AntepRohmanNurFauzi" aria-label="Kunjungi telegram" target="_blank" rel="noopener">
+          <i class="fab fa-telegram">
+          </i>
+         </a>
+         <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://api.whatsapp.com/send/?phone=%2B6281953550402&text&type=phone_number&app_absent=0" aria-label="Kunjungi whatsapp" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp">
+          </i>
+         </a>
+         <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://instagram.com/username" aria-label="Kunjungi Instagram" target="_blank" rel="noopener">
+          <i class="fab fa-instagram">
+          </i>
+         </a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2024 Your Company, Inc. All rights reserved.
+      </div>
+    </footer>
+ </body>
+</html>
